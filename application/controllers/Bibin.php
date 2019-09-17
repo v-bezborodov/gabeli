@@ -11,6 +11,8 @@ class Bibin extends CI_Controller {
 
     public function index()
     {
-        redirect('https://www.linkedin.com/in/s%C5%82awek-bezborodov/','location');
+//        redirect('https://www.linkedin.com/in/s%C5%82awek-bezborodov/','location');
+        $param1 = $this->uri->segment(1);
+        print_r($param1);
     }
 }
