@@ -11,8 +11,18 @@ class Bibin extends CI_Controller {
 
     public function index()
     {
-//        redirect('https://www.linkedin.com/in/s%C5%82awek-bezborodov/','location');
-        $param1 = $this->uri->segment(1);
-        print_r($param1);
+        $param = $this->uri->segment(1);
+    if($param) {
+        if (preg_match('/(linkedin)/i', $param)) {
+            redirect('https://www.linkedin.com/in/s%C5%82awek-bezborodov/', 'location');
+        }
+        if (preg_match('/(fb)|(facebook)|(fcbk)/i', $param)) {
+            redirect('https://www.facebook.com/po.postman', 'location');
+        }
+        if (preg_match('/(git)(github)/', $param)) {
+            redirect('https://github.com/wenceslawus', 'location');
+        }
+        print_r('Undefined comand <b>' . $param . '</b>');
+    }
     }
 }
